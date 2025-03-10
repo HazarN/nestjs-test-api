@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 
 import { AppController } from '@/controllers/app.controller';
+import { ProductModule } from '@/modules/product.module';
 import { AppService } from '@/services/app.service';
 import { MongooseModule } from '@nestjs/mongoose';
 
@@ -23,6 +24,9 @@ import { MongooseModule } from '@nestjs/mongoose';
     ConfigModule.forRoot({
       isGlobal: true,
     }),
+
+    // Module imports
+    ProductModule,
   ],
   controllers: [AppController],
   providers: [AppService],
